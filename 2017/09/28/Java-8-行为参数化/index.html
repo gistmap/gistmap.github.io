@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="java,java8," />
 
 
 
@@ -94,13 +94,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="gistmap">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="前言既然java9来了，那我们愉快的学习下java8 :) 准备假定我们要完成一个筛选实体对象的方法，我们该怎样做，下面通过逐渐改进的方式来了解行为参数化 一个苹果类 1234567891011public class Apple &amp;#123;        private String color;        private Double weight;            public">
+<meta name="keywords" content="java,java8">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 8 行为参数化">
+<meta property="og:url" content="http://yoursite.com/2017/09/28/Java-8-行为参数化/index.html">
 <meta property="og:site_name" content="gistmap">
+<meta property="og:description" content="前言既然java9来了，那我们愉快的学习下java8 :) 准备假定我们要完成一个筛选实体对象的方法，我们该怎样做，下面通过逐渐改进的方式来了解行为参数化 一个苹果类 1234567891011public class Apple &amp;#123;        private String color;        private Double weight;            public">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-28T13:03:58.649Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="gistmap">
+<meta name="twitter:title" content="Java 8 行为参数化">
+<meta name="twitter:description" content="前言既然java9来了，那我们愉快的学习下java8 :) 准备假定我们要完成一个筛选实体对象的方法，我们该怎样做，下面通过逐渐改进的方式来了解行为参数化 一个苹果类 1234567891011public class Apple &amp;#123;        private String color;        private Double weight;            public">
 
 
 
@@ -129,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/28/Java-8-行为参数化/"/>
 
 
 
 
 
-  <title>gistmap</title>
+  <title>Java 8 行为参数化 | gistmap</title>
   
 
 
@@ -160,9 +165,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -265,9 +268,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -297,9 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/28/Java-8-行为参数化/" itemprop="url">Java 8 行为参数化</a></h1>
+          <h1 class="post-title" itemprop="name headline">Java 8 行为参数化</h1>
         
 
         <div class="post-meta">
@@ -371,9 +372,7 @@
       
 
       
-        
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>既然java9来了，那我们愉快的学习下java8 :)</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>既然java9来了，那我们愉快的学习下java8 :)</p>
 <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>假定我们要完成一个筛选实体对象的方法，我们该怎样做，下面通过逐渐改进的方式来了解<strong>行为参数化</strong></p>
 <p>一个苹果类</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Apple</span> </span>&#123;</div><div class="line">        <span class="keyword">private</span> String color;</div><div class="line">        <span class="keyword">private</span> Double weight;</div><div class="line">        </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Apple</span><span class="params">()</span> </span>&#123;&#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Apple</span><span class="params">(String color, Double weight)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.color = color;</div><div class="line">        <span class="keyword">this</span>.weight = weight;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//getter and setter</span></div></pre></td></tr></table></figure>
@@ -423,8 +422,6 @@
 </ul>
 <p>有兴趣的可以点进源码看一看，记方法返回值是一个不错的方法用于区别这三个接口的作用。对了，第一个内置的<strong>Predicate</strong>可直接用于以上的例子。</p>
 
-          
-        
       
     </div>
     
@@ -439,380 +436,38 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/16/ClassLoad-getResources实践/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="gistmap">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="gistmap">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/16/ClassLoad-getResources实践/" itemprop="url">ClassLoad.getResources实践</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-16T22:23:34+08:00">
-                2017-09-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/java/" rel="tag"># java</a>
           
-
+            <a href="/tags/java8/" rel="tag"># java8</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><p>要完成一个获取指定包名下的所有类</p>
-<h2 id="熟悉相关API"><a href="#熟悉相关API" class="headerlink" title="熟悉相关API"></a>熟悉相关API</h2><p>以下是getResources源码中的注释：</p>
-<blockquote>
-<p>Finds all the resources with the given name. A resource is some data(images, audio, text, etc) that can be accessed by class code in away that is independent of the location of the code.<br>@return  An enumeration of {@link java.net.URL <tt>URL</tt>} objects for the resource.  If no resources could  be found, the enumeration  will be empty.  Resources that the class loader doesn’t have access to will not be in the enumeration.</p>
-</blockquote>
-<p>大致的意思是：根据给定的名称找到其下的数据，返回值是一个Enumeration，我并不知道Enumeration是什么。。<br>惯例看源码中的注释：</p>
-<blockquote>
-<p>An object that implements the Enumeration interface generates a series of elements, one at a time. Successive calls to the <code>nextElement</code> method return successive elements of the series.</p>
-</blockquote>
-<p>非常清晰的描述：实现了枚举接口的对象，可生成一连串的元素。需要连续调用nextElement方法来获得其中的元素。<br>恕我直言，这用法和迭代器Iterator一样。接着往下看。</p>
-<blockquote>
-<p>NOTE: The functionality of this interface is duplicated by the Iterator<br>  interface.  In addition, Iterator adds an optional remove operation, and<br>  has shorter method names.  New implementations should consider using<br>  Iterator in preference to Enumeration.</p>
-</blockquote>
-<p>先告诉我们这个接口的功能是由迭代器复写的，此外推销了一波迭代器并说新实现应考虑使用迭代器。</p>
-<p>以下是Enumeration接口的源码，很短，用法也很明了。就是让我们先判断有没有下一个元素，然后取出来操作，和迭代器一毛一样。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Enumeration</span>&lt;<span class="title">E</span>&gt; </span>&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * Tests if this enumeration contains more elements.</span></div><div class="line"><span class="comment">     *</span></div><div class="line"><span class="comment">     * <span class="doctag">@return</span>  &lt;code&gt;true&lt;/code&gt; if and only if this enumeration object</span></div><div class="line"><span class="comment">     *           contains at least one more element to provide;</span></div><div class="line"><span class="comment">     *          &lt;code&gt;false&lt;/code&gt; otherwise.</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">hasMoreElements</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * Returns the next element of this enumeration if this enumeration</span></div><div class="line"><span class="comment">     * object has at least one more element to provide.</span></div><div class="line"><span class="comment">     *</span></div><div class="line"><span class="comment">     * <span class="doctag">@return</span>     the next element of this enumeration.</span></div><div class="line"><span class="comment">     * <span class="doctag">@exception</span>  NoSuchElementException  if no more elements exist.</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function">E <span class="title">nextElement</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>准备工作完毕，下面开干~</p>
-<h2 id="开干"><a href="#开干" class="headerlink" title="开干"></a>开干</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PackageClass</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</div><div class="line"></div><div class="line">        Set&lt;Class&lt;?&gt;&gt; classSet = <span class="keyword">new</span> HashSet&lt;&gt;();</div><div class="line">        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();</div><div class="line">        String packageName = <span class="string">"com.gistmap.hello"</span>;</div><div class="line">        Enumeration&lt;URL&gt; urls  = classLoader.getResources(packageName.replace(<span class="string">"."</span>,<span class="string">"/"</span>));</div><div class="line">        <span class="keyword">while</span> (urls.hasMoreElements()) &#123;</div><div class="line">            URL url = urls.nextElement();</div><div class="line">            <span class="keyword">if</span> (url != <span class="keyword">null</span>) &#123;</div><div class="line">                String protocol = url.getProtocol();</div><div class="line">                <span class="keyword">if</span> (protocol.equals(<span class="string">"file"</span>)) &#123;</div><div class="line">                    String packagePath = url.getPath();</div><div class="line">                    addClass(classSet,packagePath,packageName);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        classSet.forEach(c-&gt; System.out.println(c.toString()));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">addClass</span><span class="params">(Set&lt;Class&lt;?&gt;&gt; classSet, String packagePath, String packageName)</span> </span>&#123;</div><div class="line">        File[] files = <span class="keyword">new</span> File(packagePath).listFiles(</div><div class="line">                f -&gt; f.isDirectory() ||</div><div class="line">                    (f.isFile() &amp;&amp; f.getName().endsWith(<span class="string">".class"</span>)));</div><div class="line">        <span class="keyword">for</span> (File file : files) &#123;</div><div class="line">            String fileName = file.getName();</div><div class="line">            <span class="keyword">if</span> (file.isFile()) &#123;</div><div class="line">                String className = fileName.substring(<span class="number">0</span>, fileName.lastIndexOf(<span class="string">"."</span>));</div><div class="line">                <span class="keyword">if</span> (!className.equals(<span class="string">""</span>) &amp;&amp; className != <span class="keyword">null</span>) &#123;</div><div class="line">                    className = packageName + <span class="string">"."</span> + className;</div><div class="line">                &#125;</div><div class="line">                doAddClass(classSet,className);</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                String subPackagePath = fileName;</div><div class="line">                <span class="keyword">if</span> (!subPackagePath.equals(<span class="string">""</span>) &amp;&amp; subPackagePath != <span class="keyword">null</span>) &#123;</div><div class="line">                    subPackagePath = packagePath + <span class="string">"/"</span> + fileName;</div><div class="line">                &#125;</div><div class="line">                String subPackageName = fileName;</div><div class="line">                <span class="keyword">if</span> (!subPackageName.equals(<span class="string">""</span>) &amp;&amp; subPackageName != <span class="keyword">null</span>) &#123;</div><div class="line">                    subPackageName = packageName + <span class="string">"."</span> + subPackageName;</div><div class="line">                &#125;</div><div class="line">                addClass(classSet, subPackagePath, subPackageName);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">doAddClass</span><span class="params">(Set&lt;Class&lt;?&gt;&gt; classSet, String className)</span> </span>&#123;</div><div class="line">        Class&lt;?&gt; cls = loadClass(className, <span class="keyword">false</span>);</div><div class="line">        classSet.add(cls);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Class&lt;?&gt; loadClass(String className, <span class="keyword">boolean</span> b) &#123;</div><div class="line">        Class&lt;?&gt; cls;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            cls = Class.forName(className, <span class="keyword">false</span>, Thread.currentThread().getContextClassLoader());</div><div class="line">        &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> cls;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>以上就把一个包名下的类的字节码全放到HashSet里的，就可以直接用Class.newInstance()调用。以上~</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/15/Java-微服务实践-笔记一/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="gistmap">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="gistmap">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/15/Java-微服务实践-笔记一/" itemprop="url">Java 微服务实践 笔记一</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-15T22:22:08+08:00">
-                2017-05-15
-              </time>
+              <a href="/2017/09/16/ClassLoad-getResources实践/" rel="next" title="ClassLoad.getResources实践">
+                <i class="fa fa-chevron-left"></i> ClassLoad.getResources实践
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h2 id="静态web内容"><a href="#静态web内容" class="headerlink" title="静态web内容"></a>静态web内容</h2><p>HTTP请求内容由Web服务器文件系统提供，常见静态Web内容如：HTML、CSS、JS、JPEG、Flash等等。</p>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
-<li>计算类型：I/O类型</li>
-<li>交互方式：单一</li>
-<li>资源内容：相同（基本）</li>
-<li>资源路径：物理路径（文件，目录）</li>
-<li>请求方法：GET（主要）</li>
-</ul>
-<h3 id="标准优化技术"><a href="#标准优化技术" class="headerlink" title="标准优化技术"></a>标准优化技术</h3><h4 id="资源变化"><a href="#资源变化" class="headerlink" title="资源变化"></a>资源变化</h4><ul>
-<li>响应头：Last-Modified（第一次）</li>
-<li>请求头：If-Modified-Since（第一次）</li>
-<li>Status Code: 403 Not Modified</li>
-<li>只有响应头，无返回主题，用本地缓存</li>
-</ul>
-<h4 id="资源缓存"><a href="#资源缓存" class="headerlink" title="资源缓存"></a>资源缓存</h4><ul>
-<li>响应头：ETag（相当与Cache Key）</li>
-<li><p>请求头：If-None-Match</p>
-<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p><em>为什么Java Web Server不是常用Web Server？</em></p>
-<ul>
-<li>内存占用：类型，分配</li>
-<li>垃圾回收：被动回收(调用System.gc()只是建议虚拟去回收)，停顿</li>
-<li>并发处理：线程池</li>
-</ul>
-</li>
-</ul>
-<h2 id="动态Web内容"><a href="#动态Web内容" class="headerlink" title="动态Web内容"></a>动态Web内容</h2><p>与静态Web内容不同，请求内容通过服务器计算而来。</p>
-<h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><ul>
-<li>计算类型：混合类型（I/O,CPU,内存）</li>
-<li>交互方式：丰富（用户输入，客户端特性[user-agent]）</li>
-<li>资源内容：多样性</li>
-<li>资源路径：逻辑路径（虚拟）</li>
-<li>请求方法：GET/HEAD/PUT/DELETE。。</li>
-</ul>
-<h3 id="常用应用场景"><a href="#常用应用场景" class="headerlink" title="常用应用场景"></a>常用应用场景</h3><ul>
-<li>页面渲染</li>
-<li>表单交互</li>
-<li>Ajax(现在通常不处理XML,而是JSON）</li>
-<li>XML(RSS)</li>
-<li>JSON/JSONP</li>
-<li>Web Services(SOAP、WSDL)</li>
-<li>WebSocket(Web QQ)</li>
-</ul>
-<h3 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h3><ul>
-<li>资源定位（URI）</li>
-<li>请求协议（Protocol）</li>
-<li>请求方法（Method)</li>
-<li>请求参数（Parameter）</li>
-<li>请求主体（Body）</li>
-<li>请求头（Header)</li>
-<li>Cookie<br>除了Body其他都包含在Header里</li>
-</ul>
-<h3 id="响应"><a href="#响应" class="headerlink" title="响应"></a>响应</h3><ul>
-<li>响应头</li>
-<li>响应主体</li>
-</ul>
-<h3 id="技术-架构演变"><a href="#技术-架构演变" class="headerlink" title="技术/架构演变"></a>技术/架构演变</h3><ul>
-<li>CGI（Common Gateway Interface)</li>
-<li>Servlet</li>
-<li>JSP</li>
-<li>Model 1 （JSP + Servlet + JavaBeans）</li>
-<li>Model 2 （MVC）</li>
-</ul>
-<h3 id="Model-2-与-MVC-的细微差异"><a href="#Model-2-与-MVC-的细微差异" class="headerlink" title="Model 2 与 MVC 的细微差异"></a>Model 2 与 MVC 的细微差异</h3><ul>
-<li>Model 2为面向Web服务的架构，MVC则是面向所有应用场景（比如：PC应用，无线应用）</li>
-<li>相对于MVC，Model 2中Controller细化为Front Controller(FC)和Application Controller(AC)，前者负责路由后者，后者负责跳转视图。</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -822,10 +477,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -833,6 +489,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -853,8 +513,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -940,6 +609,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">2.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一次尝试"><span class="nav-number">3.</span> <span class="nav-text">第一次尝试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二次尝试"><span class="nav-number">4.</span> <span class="nav-text">第二次尝试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三次尝试"><span class="nav-number">5.</span> <span class="nav-text">第三次尝试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四次尝试"><span class="nav-number">6.</span> <span class="nav-text">第四次尝试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五次尝试"><span class="nav-number">7.</span> <span class="nav-text">第五次尝试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主角登场–lambda"><span class="nav-number">8.</span> <span class="nav-text">主角登场–lambda</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结束"><span class="nav-number">9.</span> <span class="nav-text">结束</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1060,10 +745,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
