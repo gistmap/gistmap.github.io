@@ -393,11 +393,12 @@
 <p>使用了JDK的动态代理后，我们只需要一个类即可为不同的类定制相同的行为（这里指before()与after(））。<br>我们需要了解怎样去使用JDK动态代理：</p>
 <ul>
 <li>实现InvocationHandler接口并重写invoke方法(定制行为)</li>
-<li>编写getProxy()方法（获得类的代理）（这部分可以在main里写，为了方便，我把它封装到了代理类内）<br>值得注意的有Proxy.newProxyInstance()的功能与参数，invoke的参数列表含义。<br>以下是Proxy.newProxyInstance()源码的部分注释，有兴趣可自行查看。<blockquote>
+<li>编写getProxy()方法（获得类的代理）（这部分可以在main里写，为了方便，我把它封装到了代理类内）</li>
+</ul>
+<p>值得注意的有Proxy.newProxyInstance()的功能与参数，invoke的参数列表含义。<br>以下是Proxy.newProxyInstance()源码的部分注释，有兴趣可自行查看。</p>
+<blockquote>
 <p>Returns an instance of a proxy class for the specified interfaces  that dispatches method invocations to the specified invocation  handler.<br>@param   loader the class loader to define the proxy class<br>@param   interfaces the list of interfaces for the proxy class to implement<br>@param   h the invocation handler to dispatch method invocations to</p>
 </blockquote>
-</li>
-</ul>
 <p>意思为：返回指定接口的代理类的实例，他将方法指派给调用程序。<br>第一个参数类型为ClassLoader，需传入所需代理类的ClassLoader。<br>第二个参数类型为Class&lt;?&gt;[]，需传入所需代理类实现的接口，为Class数组类型，Class&lt;?&gt;为不确定的Java类型。<br>第三个参数类型为InvocationHandler，可以看到正是我们所实现的接口，他是一个通过代理类实现的调用处理器，传入当前类对象即可。<br>以下为InvocationHandler.invoke()源码的部分注释。</p>
 <blockquote>
 <p> Processes a method invocation on a proxy instance and returns the result.  This method will be invoked on an invocation handler when a method is invoked on a proxy instance that it is associated with.<br>@param   proxy the proxy instance that the method was invoked on<br>@param   method the {@code Method} instance corresponding to the interface method invoked on the proxy instance.  The declaring class of the {@code Method} object will be the interface that the method was declared in, which may be a superinterface of the proxy interface that the proxy class inherits the method through.<br>@param   args an array of objects containing the values of the arguments passed in the method invocation on the proxy instance,or {@code null} if interface method takes no arguments. Arguments of primitive types are wrapped in instances of the appropriate primitive wrapper class, such as {@code java.lang.Integer} or {@code java.lang.Boolean}.</p>
