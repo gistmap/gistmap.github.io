@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="任务描述利用注解来完成非默认的权限控制，并把这些需要权限的接口提供出来。 完成注解功能主要提供3个方法分别是：  角色集 方法的key 方法描述  1234567891011@Target(ElementType.METHOD)@Retention(RetentionPolicy.RUNTIME)@Documentedpublic @interface Access &amp;#123;	Role[] r">
+<meta name="description" content="任务描述利用注解来完成非默认的权限控制，并把这些需要权限的接口提供出来。 完成注解功能主要提供3个方法分别是：  角色集 方法的key 方法描述  1234567891011@Target(ElementType.METHOD)@Retention(RetentionPolicy.RUNTIME)@Documentedpublic @interface Access &amp;#123;    Role[">
 <meta name="keywords" content="工作">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记一次有意思的工作任务">
 <meta property="og:url" content="http://yoursite.com/2018/03/25/记一次比较有意思的任务/index.html">
 <meta property="og:site_name" content="gistmap">
-<meta property="og:description" content="任务描述利用注解来完成非默认的权限控制，并把这些需要权限的接口提供出来。 完成注解功能主要提供3个方法分别是：  角色集 方法的key 方法描述  1234567891011@Target(ElementType.METHOD)@Retention(RetentionPolicy.RUNTIME)@Documentedpublic @interface Access &amp;#123;	Role[] r">
+<meta property="og:description" content="任务描述利用注解来完成非默认的权限控制，并把这些需要权限的接口提供出来。 完成注解功能主要提供3个方法分别是：  角色集 方法的key 方法描述  1234567891011@Target(ElementType.METHOD)@Retention(RetentionPolicy.RUNTIME)@Documentedpublic @interface Access &amp;#123;    Role[">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-26T13:12:07.969Z">
+<meta property="og:updated_time" content="2018-03-26T13:16:35.155Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记一次有意思的工作任务">
-<meta name="twitter:description" content="任务描述利用注解来完成非默认的权限控制，并把这些需要权限的接口提供出来。 完成注解功能主要提供3个方法分别是：  角色集 方法的key 方法描述  1234567891011@Target(ElementType.METHOD)@Retention(RetentionPolicy.RUNTIME)@Documentedpublic @interface Access &amp;#123;	Role[] r">
+<meta name="twitter:description" content="任务描述利用注解来完成非默认的权限控制，并把这些需要权限的接口提供出来。 完成注解功能主要提供3个方法分别是：  角色集 方法的key 方法描述  1234567891011@Target(ElementType.METHOD)@Retention(RetentionPolicy.RUNTIME)@Documentedpublic @interface Access &amp;#123;    Role[">
 
 
 
@@ -390,7 +390,7 @@
 <li>方法的key</li>
 <li>方法描述</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Target</span>(ElementType.METHOD)</div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</div><div class="line"><span class="meta">@Documented</span></div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Access &#123;</div><div class="line"></div><div class="line">	Role[] role() <span class="keyword">default</span> &#123;&#125;;</div><div class="line"></div><div class="line">    <span class="function">String <span class="title">key</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</div><div class="line"></div><div class="line">    <span class="function">String <span class="title">desc</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Target</span>(ElementType.METHOD)</div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</div><div class="line"><span class="meta">@Documented</span></div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Access &#123;</div><div class="line"></div><div class="line">    Role[] role() <span class="keyword">default</span> &#123;&#125;;</div><div class="line"></div><div class="line">    <span class="function">String <span class="title">key</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</div><div class="line"></div><div class="line">    <span class="function">String <span class="title">desc</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="拦截器拦截"><a href="#拦截器拦截" class="headerlink" title="拦截器拦截"></a>拦截器拦截</h3><p>主要的思路就是</p>
 <ul>
 <li>拿到HandlerMethod对象</li>
