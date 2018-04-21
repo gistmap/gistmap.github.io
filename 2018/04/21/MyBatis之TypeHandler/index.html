@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="java,http,微服务," />
+  <meta name="keywords" content="framework," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="静态web内容HTTP请求内容由Web服务器文件系统提供，常见静态Web内容如：HTML、CSS、JS、JPEG、Flash等等。 特点 计算类型：I/O类型 交互方式：单一 资源内容：相同（基本） 资源路径：物理路径（文件，目录） 请求方法：GET（主要）  标准优化技术资源变化 响应头：Last-Modified（第一次） 请求头：If-Modified-Since（第一次） Status C">
-<meta name="keywords" content="java,http,微服务">
+<meta name="description" content="前言TypeHandler是Mybatis在存储数据前及从数据库拿到数据组装前的一个类型映射处理器，简单的说：在JavaType&amp;lt;–&amp;gt;JdbcType的转化中做点什么。其实Mybatis已经内置了30多种通用的TypeHandler，如：StringHandler，IntegerTypeHandler。在官网Configuration XML下的typeHandlers可以看到全部的内">
+<meta name="keywords" content="framework">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java 微服务实践 笔记一">
-<meta property="og:url" content="http://yoursite.com/2017/05/15/Java-微服务实践-笔记一/index.html">
+<meta property="og:title" content="MyBatis之TypeHandler">
+<meta property="og:url" content="http://yoursite.com/2018/04/21/MyBatis之TypeHandler/index.html">
 <meta property="og:site_name" content="gistmap">
-<meta property="og:description" content="静态web内容HTTP请求内容由Web服务器文件系统提供，常见静态Web内容如：HTML、CSS、JS、JPEG、Flash等等。 特点 计算类型：I/O类型 交互方式：单一 资源内容：相同（基本） 资源路径：物理路径（文件，目录） 请求方法：GET（主要）  标准优化技术资源变化 响应头：Last-Modified（第一次） 请求头：If-Modified-Since（第一次） Status C">
+<meta property="og:description" content="前言TypeHandler是Mybatis在存储数据前及从数据库拿到数据组装前的一个类型映射处理器，简单的说：在JavaType&amp;lt;–&amp;gt;JdbcType的转化中做点什么。其实Mybatis已经内置了30多种通用的TypeHandler，如：StringHandler，IntegerTypeHandler。在官网Configuration XML下的typeHandlers可以看到全部的内">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-16T03:34:55.265Z">
+<meta property="og:updated_time" content="2018-04-21T14:05:50.057Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java 微服务实践 笔记一">
-<meta name="twitter:description" content="静态web内容HTTP请求内容由Web服务器文件系统提供，常见静态Web内容如：HTML、CSS、JS、JPEG、Flash等等。 特点 计算类型：I/O类型 交互方式：单一 资源内容：相同（基本） 资源路径：物理路径（文件，目录） 请求方法：GET（主要）  标准优化技术资源变化 响应头：Last-Modified（第一次） 请求头：If-Modified-Since（第一次） Status C">
+<meta name="twitter:title" content="MyBatis之TypeHandler">
+<meta name="twitter:description" content="前言TypeHandler是Mybatis在存储数据前及从数据库拿到数据组装前的一个类型映射处理器，简单的说：在JavaType&amp;lt;–&amp;gt;JdbcType的转化中做点什么。其实Mybatis已经内置了30多种通用的TypeHandler，如：StringHandler，IntegerTypeHandler。在官网Configuration XML下的typeHandlers可以看到全部的内">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/15/Java-微服务实践-笔记一/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/21/MyBatis之TypeHandler/"/>
 
 
 
 
 
-  <title>Java 微服务实践 笔记一 | gistmap</title>
+  <title>MyBatis之TypeHandler | gistmap</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/15/Java-微服务实践-笔记一/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/21/MyBatis之TypeHandler/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="gistmap">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java 微服务实践 笔记一</h1>
+          <h1 class="post-title" itemprop="name headline">MyBatis之TypeHandler</h1>
         
 
         <div class="post-meta">
@@ -312,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-15T22:22:08+08:00">
-                2017-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-21T22:03:55+08:00">
+                2018-04-21
               </time>
             
 
@@ -335,8 +335,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
+                  <a href="/categories/framework/" itemprop="url" rel="index">
+                    <span itemprop="name">framework</span>
                   </a>
                 </span>
 
@@ -352,7 +352,7 @@
 
           
           
-             <span id="/2017/05/15/Java-微服务实践-笔记一/" class="leancloud_visitors" data-flag-title="Java 微服务实践 笔记一">
+             <span id="/2018/04/21/MyBatis之TypeHandler/" class="leancloud_visitors" data-flag-title="MyBatis之TypeHandler">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -383,72 +383,20 @@
       
 
       
-        <h2 id="静态web内容"><a href="#静态web内容" class="headerlink" title="静态web内容"></a>静态web内容</h2><p>HTTP请求内容由Web服务器文件系统提供，常见静态Web内容如：HTML、CSS、JS、JPEG、Flash等等。</p>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
-<li>计算类型：I/O类型</li>
-<li>交互方式：单一</li>
-<li>资源内容：相同（基本）</li>
-<li>资源路径：物理路径（文件，目录）</li>
-<li>请求方法：GET（主要）</li>
-</ul>
-<h3 id="标准优化技术"><a href="#标准优化技术" class="headerlink" title="标准优化技术"></a>标准优化技术</h3><h4 id="资源变化"><a href="#资源变化" class="headerlink" title="资源变化"></a>资源变化</h4><ul>
-<li>响应头：Last-Modified（第一次）</li>
-<li>请求头：If-Modified-Since（第一次）</li>
-<li>Status Code: 403 Not Modified</li>
-<li>只有响应头，无返回主题，用本地缓存</li>
-</ul>
-<h4 id="资源缓存"><a href="#资源缓存" class="headerlink" title="资源缓存"></a>资源缓存</h4><ul>
-<li>响应头：ETag（相当与Cache Key）</li>
-<li><p>请求头：If-None-Match</p>
-<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p><em>为什么Java Web Server不是常用Web Server？</em></p>
-<ul>
-<li>内存占用：类型，分配</li>
-<li>垃圾回收：被动回收(调用System.gc()只是建议虚拟去回收)，停顿</li>
-<li>并发处理：线程池</li>
-</ul>
-</li>
-</ul>
-<h2 id="动态Web内容"><a href="#动态Web内容" class="headerlink" title="动态Web内容"></a>动态Web内容</h2><p>与静态Web内容不同，请求内容通过服务器计算而来。</p>
-<h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><ul>
-<li>计算类型：混合类型（I/O,CPU,内存）</li>
-<li>交互方式：丰富（用户输入，客户端特性[user-agent]）</li>
-<li>资源内容：多样性</li>
-<li>资源路径：逻辑路径（虚拟）</li>
-<li>请求方法：GET/HEAD/PUT/DELETE。。</li>
-</ul>
-<h3 id="常用应用场景"><a href="#常用应用场景" class="headerlink" title="常用应用场景"></a>常用应用场景</h3><ul>
-<li>页面渲染</li>
-<li>表单交互</li>
-<li>Ajax(现在通常不处理XML,而是JSON）</li>
-<li>XML(RSS)</li>
-<li>JSON/JSONP</li>
-<li>Web Services(SOAP、WSDL)</li>
-<li>WebSocket(Web QQ)</li>
-</ul>
-<h3 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h3><ul>
-<li>资源定位（URI）</li>
-<li>请求协议（Protocol）</li>
-<li>请求方法（Method)</li>
-<li>请求参数（Parameter）</li>
-<li>请求主体（Body）</li>
-<li>请求头（Header)</li>
-<li>Cookie<br>除了Body其他都包含在Header里</li>
-</ul>
-<h3 id="响应"><a href="#响应" class="headerlink" title="响应"></a>响应</h3><ul>
-<li>响应头</li>
-<li>响应主体</li>
-</ul>
-<h3 id="技术-架构演变"><a href="#技术-架构演变" class="headerlink" title="技术/架构演变"></a>技术/架构演变</h3><ul>
-<li>CGI（Common Gateway Interface)</li>
-<li>Servlet</li>
-<li>JSP</li>
-<li>Model 1 （JSP + Servlet + JavaBeans）</li>
-<li>Model 2 （MVC）</li>
-</ul>
-<h3 id="Model-2-与-MVC-的细微差异"><a href="#Model-2-与-MVC-的细微差异" class="headerlink" title="Model 2 与 MVC 的细微差异"></a>Model 2 与 MVC 的细微差异</h3><ul>
-<li>Model 2为面向Web服务的架构，MVC则是面向所有应用场景（比如：PC应用，无线应用）</li>
-<li>相对于MVC，Model 2中Controller细化为Front Controller(FC)和Application Controller(AC)，前者负责路由后者，后者负责跳转视图。</li>
-</ul>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>TypeHandler是Mybatis在存储数据前及从数据库拿到数据组装前的一个类型映射处理器，简单的说：在JavaType&lt;–&gt;JdbcType的转化中做点什么。其实Mybatis已经内置了30多种通用的TypeHandler，如：StringHandler，IntegerTypeHandler。在官网Configuration XML下的typeHandlers可以看到全部的内置typeHandler与jdbcType的对应关系。在<strong>TypeHandlerRegistry</strong>类中的TypeHandlerRegistry方法也可看到基本类型和对象类型注册了相同的内置TypeHandler。通常来说，自带的通用类型处理已经足够，但有些特殊情况无法满足，还好框架给了我们自定义TypeHandler来解决这一问题。</p>
+<h3 id="TypeHandler接口"><a href="#TypeHandler接口" class="headerlink" title="TypeHandler接口"></a>TypeHandler<t>接口</t></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">TypeHandler</span>&lt;<span class="title">T</span>&gt; </span>&#123;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">void</span> <span class="title">setParameter</span><span class="params">(PreparedStatement ps, <span class="keyword">int</span> i, T parameter, JdbcType jdbcType)</span> <span class="keyword">throws</span> SQLException</span>;</div><div class="line"></div><div class="line">  <span class="function">T <span class="title">getResult</span><span class="params">(ResultSet rs, String columnName)</span> <span class="keyword">throws</span> SQLException</span>;</div><div class="line"></div><div class="line">  <span class="function">T <span class="title">getResult</span><span class="params">(ResultSet rs, <span class="keyword">int</span> columnIndex)</span> <span class="keyword">throws</span> SQLException</span>;</div><div class="line"></div><div class="line">  <span class="function">T <span class="title">getResult</span><span class="params">(CallableStatement cs, <span class="keyword">int</span> columnIndex)</span> <span class="keyword">throws</span> SQLException</span>;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>通过看方法名和参数类型能大致的了解到这些方法是做什么的了。PreparedStatement-插入前设置参数，ResultSet-从结果集里拿数据。</p>
+<h3 id="准备实体类"><a href="#准备实体类" class="headerlink" title="准备实体类"></a>准备实体类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">enum</span> Sex &#123;</div><div class="line">    MALE(<span class="number">0</span> , <span class="string">"男"</span>),</div><div class="line">    FEMALE(<span class="number">1</span> , <span class="string">"女"</span>);</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> SexCode;</div><div class="line">    <span class="keyword">private</span> String SexName;</div><div class="line"></div><div class="line">    Sex(<span class="keyword">int</span> sexCode, String sexName) &#123;</div><div class="line">        SexCode = sexCode;</div><div class="line">        SexName = sexName;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSexCode</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> SexCode;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Sex <span class="title">getSexFromCode</span><span class="params">(<span class="keyword">int</span> code)</span></span>&#123;</div><div class="line">        <span class="keyword">for</span> (Sex sex : Sex.values()) &#123;</div><div class="line">            <span class="keyword">if</span> (sex.getSexCode() == code)</div><div class="line">                <span class="keyword">return</span> sex;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Data</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> Integer id;</div><div class="line">    <span class="keyword">private</span> String name;</div><div class="line">    <span class="keyword">private</span> Sex sex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="自定义TypeHandler"><a href="#自定义TypeHandler" class="headerlink" title="自定义TypeHandler"></a>自定义TypeHandler</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SexTypeHandler</span> <span class="keyword">implements</span> <span class="title">TypeHandler</span>&lt;<span class="title">Sex</span>&gt; </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setParameter</span><span class="params">(PreparedStatement preparedStatement, <span class="keyword">int</span> i, Sex sex, JdbcType jdbcType)</span> <span class="keyword">throws</span> SQLException </span>&#123;</div><div class="line">        preparedStatement.setInt(i, sex.getSexCode());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Sex <span class="title">getResult</span><span class="params">(ResultSet resultSet, String s)</span> <span class="keyword">throws</span> SQLException </span>&#123;</div><div class="line">        <span class="keyword">int</span> result = resultSet.getInt(s);</div><div class="line">        <span class="keyword">return</span> Sex.getSexFromCode(result);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Sex <span class="title">getResult</span><span class="params">(ResultSet resultSet, <span class="keyword">int</span> i)</span> <span class="keyword">throws</span> SQLException </span>&#123;</div><div class="line">        <span class="keyword">int</span> result = resultSet.getInt(i);</div><div class="line">        <span class="keyword">return</span> Sex.getSexFromCode(result);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Sex <span class="title">getResult</span><span class="params">(CallableStatement callableStatement, <span class="keyword">int</span> i)</span> <span class="keyword">throws</span> SQLException </span>&#123;</div><div class="line">        <span class="keyword">int</span> result = callableStatement.getInt(i);</div><div class="line">        <span class="keyword">return</span> Sex.getSexFromCode(result);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"userMap"</span> <span class="attr">type</span>=<span class="string">"com.gistmap.pojo.User"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"id"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"name"</span> <span class="attr">column</span>=<span class="string">"name"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"sex"</span> <span class="attr">column</span>=<span class="string">"sex"</span> <span class="attr">javaType</span>=<span class="string">"com.gistmap.pojo.Sex"</span></span></div><div class="line"><span class="tag">                <span class="attr">jdbcType</span>=<span class="string">"INTEGER"</span> <span class="attr">typeHandler</span>=<span class="string">"com.gistmap.handler.Sex1TypeHandler"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>调用接口得到<code>User(id=1, name=zhangran, sex=MALE)</code></p>
+<p>但在存入数据库中报错如下：</p>
+<p><code>Caused by: java.sql.SQLException: Incorrect integer value: &#39;FEMALE&#39; for column &#39;sex&#39; at row 1</code></p>
+<p>Emmm 加上这个</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"save"</span>  <span class="attr">useGeneratedKeys</span>=<span class="string">"true"</span> <span class="attr">keyProperty</span>=<span class="string">"id"</span>&gt;</span></div><div class="line">        insert into user (name,sex) values (#&#123;name&#125; , #&#123;sex, typeHandler=com.gistmap.handler.Sex1TypeHandler&#125;)</div><div class="line"><span class="tag">&lt;/<span class="name">insert</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这样存取都能按照我们如愿的进行。</p>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>其实自定义TypeHandler还可以通过继承<code>org.apache.ibatis.type.BaseTypeHandler</code>类，这样会更简单，两种方式我都测试过了，均可以达到效果。</p>
 
       
     </div>
@@ -466,11 +414,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag"># java</a>
-          
-            <a href="/tags/http/" rel="tag"># http</a>
-          
-            <a href="/tags/微服务/" rel="tag"># 微服务</a>
+            <a href="/tags/framework/" rel="tag"># framework</a>
           
         </div>
       
@@ -483,15 +427,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/03/25/记一次比较有意思的任务/" rel="next" title="记一次有意思的工作任务">
+                <i class="fa fa-chevron-left"></i> 记一次有意思的工作任务
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/16/ClassLoad-getResources实践/" rel="prev" title="ClassLoad.getResources实践">
-                ClassLoad.getResources实践 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -649,7 +593,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#静态web内容"><span class="nav-number">1.</span> <span class="nav-text">静态web内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">1.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标准优化技术"><span class="nav-number">1.2.</span> <span class="nav-text">标准优化技术</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#资源变化"><span class="nav-number">1.2.1.</span> <span class="nav-text">资源变化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#资源缓存"><span class="nav-number">1.2.2.</span> <span class="nav-text">资源缓存</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思考"><span class="nav-number">1.3.</span> <span class="nav-text">思考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态Web内容"><span class="nav-number">2.</span> <span class="nav-text">动态Web内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点-1"><span class="nav-number">2.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用应用场景"><span class="nav-number">2.2.</span> <span class="nav-text">常用应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请求"><span class="nav-number">2.3.</span> <span class="nav-text">请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应"><span class="nav-number">2.4.</span> <span class="nav-text">响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#技术-架构演变"><span class="nav-number">2.5.</span> <span class="nav-text">技术/架构演变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-2-与-MVC-的细微差异"><span class="nav-number">2.6.</span> <span class="nav-text">Model 2 与 MVC 的细微差异</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TypeHandler接口"><span class="nav-number">2.</span> <span class="nav-text">TypeHandler接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备实体类"><span class="nav-number">3.</span> <span class="nav-text">准备实体类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义TypeHandler"><span class="nav-number">4.</span> <span class="nav-text">自定义TypeHandler</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">5.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后记"><span class="nav-number">6.</span> <span class="nav-text">后记</span></a></li></ol></div>
             
 
           </div>
