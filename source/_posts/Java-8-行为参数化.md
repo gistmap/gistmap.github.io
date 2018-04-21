@@ -1,6 +1,6 @@
 ---
 title: Java 8 行为参数化
-date: 2017-09-28 20:42:36
+date: 2017-10-25 20:42:36
 tags: [java,java8]
 categories: java
 ---
