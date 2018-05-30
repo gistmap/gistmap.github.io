@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="framework," />
+  <meta name="keywords" content="java," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="前言TypeHandler是Mybatis在存储数据前及从数据库拿到数据组装前的一个类型映射处理器，简单的说：在JavaType&amp;lt;–&amp;gt;JdbcType的转化中做点什么。其实Mybatis已经内置了30多种通用的TypeHandler，如：StringHandler，IntegerTypeHandler。在官网Configuration XML下的typeHandlers可以看到全部的内">
-<meta name="keywords" content="framework">
+<meta name="description" content="前言由于公司一直在使用 JPA 作为 ORM 框架，因此分配到需要多表复杂查询或动态查询都很头大。很多人对 JPA 抱有偏见，比如 JPA 只能处理简单的单表查询。下面总结下使用过的几种方法，前几种简单略过。 EntityManager主要代码： 123456789101112Query query = entityManager.createNativeQuery(sql);List list=">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MyBatis之TypeHandler">
-<meta property="og:url" content="http://yoursite.com/2018/04/21/MyBatis之TypeHandler/index.html">
+<meta property="og:title" content="解决JPA多表动态查询">
+<meta property="og:url" content="http://yoursite.com/2018/05/30/解决JPA多表动态查询/index.html">
 <meta property="og:site_name" content="gistmap">
-<meta property="og:description" content="前言TypeHandler是Mybatis在存储数据前及从数据库拿到数据组装前的一个类型映射处理器，简单的说：在JavaType&amp;lt;–&amp;gt;JdbcType的转化中做点什么。其实Mybatis已经内置了30多种通用的TypeHandler，如：StringHandler，IntegerTypeHandler。在官网Configuration XML下的typeHandlers可以看到全部的内">
+<meta property="og:description" content="前言由于公司一直在使用 JPA 作为 ORM 框架，因此分配到需要多表复杂查询或动态查询都很头大。很多人对 JPA 抱有偏见，比如 JPA 只能处理简单的单表查询。下面总结下使用过的几种方法，前几种简单略过。 EntityManager主要代码： 123456789101112Query query = entityManager.createNativeQuery(sql);List list=">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-21T14:24:38.561Z">
+<meta property="og:updated_time" content="2018-05-30T14:05:02.461Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MyBatis之TypeHandler">
-<meta name="twitter:description" content="前言TypeHandler是Mybatis在存储数据前及从数据库拿到数据组装前的一个类型映射处理器，简单的说：在JavaType&amp;lt;–&amp;gt;JdbcType的转化中做点什么。其实Mybatis已经内置了30多种通用的TypeHandler，如：StringHandler，IntegerTypeHandler。在官网Configuration XML下的typeHandlers可以看到全部的内">
+<meta name="twitter:title" content="解决JPA多表动态查询">
+<meta name="twitter:description" content="前言由于公司一直在使用 JPA 作为 ORM 框架，因此分配到需要多表复杂查询或动态查询都很头大。很多人对 JPA 抱有偏见，比如 JPA 只能处理简单的单表查询。下面总结下使用过的几种方法，前几种简单略过。 EntityManager主要代码： 123456789101112Query query = entityManager.createNativeQuery(sql);List list=">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/21/MyBatis之TypeHandler/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/30/解决JPA多表动态查询/"/>
 
 
 
 
 
-  <title>MyBatis之TypeHandler | gistmap</title>
+  <title>解决JPA多表动态查询 | gistmap</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/21/MyBatis之TypeHandler/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/30/解决JPA多表动态查询/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="gistmap">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MyBatis之TypeHandler</h1>
+          <h1 class="post-title" itemprop="name headline">解决JPA多表动态查询</h1>
         
 
         <div class="post-meta">
@@ -312,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-21T22:03:55+08:00">
-                2018-04-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-30T22:03:52+08:00">
+                2018-05-30
               </time>
             
 
@@ -335,8 +335,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/framework/" itemprop="url" rel="index">
-                    <span itemprop="name">framework</span>
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
                   </a>
                 </span>
 
@@ -352,7 +352,7 @@
 
           
           
-             <span id="/2018/04/21/MyBatis之TypeHandler/" class="leancloud_visitors" data-flag-title="MyBatis之TypeHandler">
+             <span id="/2018/05/30/解决JPA多表动态查询/" class="leancloud_visitors" data-flag-title="解决JPA多表动态查询">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -383,20 +383,26 @@
       
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>TypeHandler是Mybatis在存储数据前及从数据库拿到数据组装前的一个类型映射处理器，简单的说：在JavaType&lt;–&gt;JdbcType的转化中做点什么。其实Mybatis已经内置了30多种通用的TypeHandler，如：StringHandler，IntegerTypeHandler。在官网Configuration XML下的typeHandlers可以看到全部的内置typeHandler与jdbcType的对应关系。在<strong>TypeHandlerRegistry</strong>类中的TypeHandlerRegistry方法也可看到基本类型和对象类型注册了相同的内置TypeHandler。通常来说，自带的通用类型处理已经足够，但有些特殊情况无法满足，还好框架给了我们自定义TypeHandler来解决这一问题。</p>
-<h3 id="TypeHandler接口"><a href="#TypeHandler接口" class="headerlink" title="TypeHandler接口"></a>TypeHandler<t>接口</t></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">TypeHandler</span>&lt;<span class="title">T</span>&gt; </span>&#123;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">void</span> <span class="title">setParameter</span><span class="params">(PreparedStatement ps, <span class="keyword">int</span> i, T parameter, JdbcType jdbcType)</span> <span class="keyword">throws</span> SQLException</span>;</div><div class="line"></div><div class="line">  <span class="function">T <span class="title">getResult</span><span class="params">(ResultSet rs, String columnName)</span> <span class="keyword">throws</span> SQLException</span>;</div><div class="line"></div><div class="line">  <span class="function">T <span class="title">getResult</span><span class="params">(ResultSet rs, <span class="keyword">int</span> columnIndex)</span> <span class="keyword">throws</span> SQLException</span>;</div><div class="line"></div><div class="line">  <span class="function">T <span class="title">getResult</span><span class="params">(CallableStatement cs, <span class="keyword">int</span> columnIndex)</span> <span class="keyword">throws</span> SQLException</span>;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>通过看方法名和参数类型能大致的了解到这些方法是做什么的了。PreparedStatement-插入前设置参数，ResultSet-从结果集里拿数据。</p>
-<h3 id="准备实体类"><a href="#准备实体类" class="headerlink" title="准备实体类"></a>准备实体类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">enum</span> Sex &#123;</div><div class="line">    MALE(<span class="number">0</span> , <span class="string">"男"</span>),</div><div class="line">    FEMALE(<span class="number">1</span> , <span class="string">"女"</span>);</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> SexCode;</div><div class="line">    <span class="keyword">private</span> String SexName;</div><div class="line"></div><div class="line">    Sex(<span class="keyword">int</span> sexCode, String sexName) &#123;</div><div class="line">        SexCode = sexCode;</div><div class="line">        SexName = sexName;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSexCode</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> SexCode;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Sex <span class="title">getSexFromCode</span><span class="params">(<span class="keyword">int</span> code)</span></span>&#123;</div><div class="line">        <span class="keyword">for</span> (Sex sex : Sex.values()) &#123;</div><div class="line">            <span class="keyword">if</span> (sex.getSexCode() == code)</div><div class="line">                <span class="keyword">return</span> sex;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Data</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> Integer id;</div><div class="line">    <span class="keyword">private</span> String name;</div><div class="line">    <span class="keyword">private</span> Sex sex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="自定义TypeHandler"><a href="#自定义TypeHandler" class="headerlink" title="自定义TypeHandler"></a>自定义TypeHandler</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SexTypeHandler</span> <span class="keyword">implements</span> <span class="title">TypeHandler</span>&lt;<span class="title">Sex</span>&gt; </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setParameter</span><span class="params">(PreparedStatement preparedStatement, <span class="keyword">int</span> i, Sex sex, JdbcType jdbcType)</span> <span class="keyword">throws</span> SQLException </span>&#123;</div><div class="line">        preparedStatement.setInt(i, sex.getSexCode());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Sex <span class="title">getResult</span><span class="params">(ResultSet resultSet, String s)</span> <span class="keyword">throws</span> SQLException </span>&#123;</div><div class="line">        <span class="keyword">int</span> result = resultSet.getInt(s);</div><div class="line">        <span class="keyword">return</span> Sex.getSexFromCode(result);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Sex <span class="title">getResult</span><span class="params">(ResultSet resultSet, <span class="keyword">int</span> i)</span> <span class="keyword">throws</span> SQLException </span>&#123;</div><div class="line">        <span class="keyword">int</span> result = resultSet.getInt(i);</div><div class="line">        <span class="keyword">return</span> Sex.getSexFromCode(result);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Sex <span class="title">getResult</span><span class="params">(CallableStatement callableStatement, <span class="keyword">int</span> i)</span> <span class="keyword">throws</span> SQLException </span>&#123;</div><div class="line">        <span class="keyword">int</span> result = callableStatement.getInt(i);</div><div class="line">        <span class="keyword">return</span> Sex.getSexFromCode(result);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"userMap"</span> <span class="attr">type</span>=<span class="string">"com.gistmap.pojo.User"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"id"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"name"</span> <span class="attr">column</span>=<span class="string">"name"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"sex"</span> <span class="attr">column</span>=<span class="string">"sex"</span> <span class="attr">javaType</span>=<span class="string">"com.gistmap.pojo.Sex"</span></span></div><div class="line"><span class="tag">                <span class="attr">jdbcType</span>=<span class="string">"INTEGER"</span> <span class="attr">typeHandler</span>=<span class="string">"com.gistmap.handler.Sex1TypeHandler"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>调用接口得到<code>User(id=1, name=zhangran, sex=MALE)</code></p>
-<p>但在存入数据库中报错如下：</p>
-<p><code>Caused by: java.sql.SQLException: Incorrect integer value: &#39;FEMALE&#39; for column &#39;sex&#39; at row 1</code></p>
-<p>Emmm 加上这个</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"save"</span>  <span class="attr">useGeneratedKeys</span>=<span class="string">"true"</span> <span class="attr">keyProperty</span>=<span class="string">"id"</span>&gt;</span></div><div class="line">        insert into user (name,sex) values (#&#123;name&#125; , #&#123;sex, typeHandler=com.gistmap.handler.Sex1TypeHandler&#125;)</div><div class="line"><span class="tag">&lt;/<span class="name">insert</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>这样存取都能按照我们如愿的进行。</p>
-<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>其实自定义TypeHandler还可以通过继承<code>org.apache.ibatis.type.BaseTypeHandler</code>类，这样会更简单，两种方式我都测试过了，均可以达到效果。</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>由于公司一直在使用 <strong>JPA</strong> 作为 ORM 框架，因此分配到需要多表复杂查询或动态查询都很头大。很多人对 JPA 抱有偏见，比如 JPA 只能处理简单的单表查询。下面总结下使用过的几种方法，前几种简单略过。</p>
+<h3 id="EntityManager"><a href="#EntityManager" class="headerlink" title="EntityManager"></a>EntityManager</h3><p>主要代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">Query query = entityManager.createNativeQuery(sql);</div><div class="line">List list=query.setFirstResult(start).setMaxResults(end).getResultList();</div><div class="line">Iterator iterator = list.iterator();</div><div class="line">List&lt;Obj&gt; objList;</div><div class="line"><span class="keyword">while</span> (iterator.hasNext()) &#123;</div><div class="line">            Object[] o = (Object[]) iterator.next();</div><div class="line">            Obj obj = <span class="keyword">new</span> Obj();</div><div class="line">    		obj.setId(String)o[<span class="number">1</span>];</div><div class="line">    		....</div><div class="line">            <span class="comment">//各种类型转换塞值</span></div><div class="line">            objList.add(obj);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>总结：sql 拼接麻烦，手动取对象数组相当麻烦，当sql 字段顺序变了之后，每个取值都需要变化。</p>
+<h3 id="使用-Spring-提供的-JdbcTemplate"><a href="#使用-Spring-提供的-JdbcTemplate" class="headerlink" title="使用 Spring 提供的 JdbcTemplate"></a>使用 Spring 提供的 JdbcTemplate</h3><p>主要代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">List&lt;Obj&gt; list = jdbcTemplate.query(sql.toString(), <span class="keyword">new</span> BeanPropertyRowMapper&lt;&gt;(Obj.class));</div></pre></td></tr></table></figure>
+<p>  总结：相比第一种方法简直舒服多了，BeanPropertyRowMapper 可以自动完成映射，也可以自定义实现特殊类型转换，不过自带的已基本够用。另外还支持下划线转驼峰。最后还要写sql，拼代码。</p>
+<h3 id="Predicate-Join"><a href="#Predicate-Join" class="headerlink" title="Predicate+Join"></a>Predicate+Join</h3><p>单表动态分页查询用 Predicate 就能做到，Join 是多表查询的关键。下面用简单的一对一来做例子</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Entity</span>(name = <span class="string">"tb_apple"</span>)</div><div class="line"><span class="meta">@Data</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Apple</span> </span>&#123;</div><div class="line">    <span class="meta">@Id</span></div><div class="line">    <span class="meta">@GeneratedValue</span>(strategy=GenerationType.IDENTITY)</div><div class="line">    <span class="keyword">private</span> Integer id;</div><div class="line">    <span class="keyword">private</span> String name;</div><div class="line">    <span class="keyword">private</span> BigDecimal weight;</div><div class="line">    <span class="meta">@Enumerated</span>(EnumType.STRING)</div><div class="line">    <span class="keyword">private</span> ColorEnum color;</div><div class="line">    <span class="keyword">private</span> Date createTime;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">@Entity</span>(name = <span class="string">"tb_person"</span>)</div><div class="line"><span class="meta">@Data</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</div><div class="line">    <span class="meta">@Id</span></div><div class="line">    <span class="meta">@GeneratedValue</span>(strategy=GenerationType.IDENTITY)</div><div class="line">    <span class="keyword">private</span> Integer id;</div><div class="line">    <span class="keyword">private</span> String name;</div><div class="line">    <span class="meta">@OneToOne</span></div><div class="line">    <span class="meta">@JoinColumn</span>(name=<span class="string">"apple_id"</span>)</div><div class="line">    <span class="keyword">private</span> Apple apple;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Repository接口 除了继承 JpaRepository 之外还需额外继承<strong>JpaSpecificationExecutor</strong>，有兴趣的可以点进去看看方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">PersonRepository</span> <span class="keyword">extends</span> <span class="title">JpaRepository</span>&lt;<span class="title">Person</span>,<span class="title">Integer</span>&gt;,<span class="title">JpaSpecificationExecutor</span>&lt;<span class="title">Person</span>&gt; </span>&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这里动态查询已Person的name 和 所持有apple 的name 为例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Component</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PersonService</span> </span>&#123;</div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    <span class="keyword">private</span> PersonRepository personRepository;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Page&lt;Person&gt; <span class="title">findAll</span><span class="params">(String name, String appleName, Integer page, Integer size)</span></span>&#123;</div><div class="line">        <span class="comment">//这里可在 Pageable 里构建 Sort 用来排序</span></div><div class="line">        Pageable pageable = PageRequest.of(page-<span class="number">1</span>, size);</div><div class="line">        Page&lt;Person&gt; housings = personRepository.findAll((root, criteriaQuery, criteriaBuilder)</div><div class="line">                -&gt; getPredicate(name, appleName, root, criteriaBuilder), pageable);</div><div class="line">        <span class="keyword">return</span> housings;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">private</span> Predicate <span class="title">getPredicate</span><span class="params">(String name, String appleName, Root&lt;Person&gt; root, CriteriaBuilder criteriaBuilder)</span> </span>&#123;</div><div class="line">        List&lt;Predicate&gt; list = Lists.newArrayList();</div><div class="line">        <span class="keyword">if</span> (StringUtils.isNotEmpty(name)) &#123;</div><div class="line">            list.add(criteriaBuilder.like(root.get(<span class="string">"name"</span>).as(String.class), <span class="string">"%"</span> + name + <span class="string">"%"</span>));</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (StringUtils.isNotEmpty(appleName)) &#123;</div><div class="line">            Join&lt;Apple, Person&gt; join = root.join(<span class="string">"apple"</span>, JoinType.LEFT);</div><div class="line">            list.add(criteriaBuilder.like(join.get(<span class="string">"name"</span>).as(String.class), <span class="string">"%"</span> + appleName + <span class="string">"%"</span>));</div><div class="line">        &#125;</div><div class="line">        Predicate[] p = <span class="keyword">new</span> Predicate[list.size()];</div><div class="line">        <span class="keyword">return</span> criteriaBuilder.and(list.toArray(p));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这样完成了多表动态分页查询。</p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>为 JPA 正名！~<br>值得一说的我样例用的 Spring Boot 的版本为 <strong>2.0.1.RELEASE</strong>，因此以下的问题可能是由于新的Spring Boot 版本提高了 JPA 的版本所导致的。</p>
+<ul>
+<li>PageRequest 的构造函数被标记为 @deprecated ，因此我用了静态方法of，我也觉得这种方式更好</li>
+<li>在写单元测试的时候发现repository.findById()返回的类型是Optional<obj>，嚯嚯嚯</obj></li>
+<li>原本使用的repository.findOne()方法的参数变成了 <strong>Example<s></s></strong> ,Example 的例子文档很多</li>
+</ul>
 
       
     </div>
@@ -414,7 +420,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/framework/" rel="tag"># framework</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
         </div>
       
@@ -427,8 +433,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/25/记一次比较有意思的任务/" rel="next" title="记一次有意思的工作任务">
-                <i class="fa fa-chevron-left"></i> 记一次有意思的工作任务
+              <a href="/2018/04/21/MyBatis之TypeHandler/" rel="next" title="MyBatis之TypeHandler">
+                <i class="fa fa-chevron-left"></i> MyBatis之TypeHandler
               </a>
             
           </div>
@@ -436,10 +442,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/30/解决JPA多表动态查询/" rel="prev" title="解决JPA多表动态查询">
-                解决JPA多表动态查询 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -597,7 +599,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TypeHandler接口"><span class="nav-number">2.</span> <span class="nav-text">TypeHandler接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备实体类"><span class="nav-number">3.</span> <span class="nav-text">准备实体类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义TypeHandler"><span class="nav-number">4.</span> <span class="nav-text">自定义TypeHandler</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">5.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后记"><span class="nav-number">6.</span> <span class="nav-text">后记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EntityManager"><span class="nav-number">2.</span> <span class="nav-text">EntityManager</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-Spring-提供的-JdbcTemplate"><span class="nav-number">3.</span> <span class="nav-text">使用 Spring 提供的 JdbcTemplate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Predicate-Join"><span class="nav-number">4.</span> <span class="nav-text">Predicate+Join</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后"><span class="nav-number">5.</span> <span class="nav-text">最后</span></a></li></ol></div>
             
 
           </div>
